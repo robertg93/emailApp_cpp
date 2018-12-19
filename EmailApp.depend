@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1545242661 source:/home/robert/c++/EmailApp/main.cpp
+	<iostream>
+	"Eamil.h"
+
+1545242644 /home/robert/c++/EmailApp/include/Eamil.h
+	<string>
+	<iostream>
+
+1545242644 source:/home/robert/c++/EmailApp/src/Eamil.cpp
+	"Eamil.h"
+
+1545242966 source:/home/robert/c++/EmailApp/src/Email.cpp
+	"Email.h"
+
+1545242966 /home/robert/c++/EmailApp/include/Email.h
+	<string>
+	<iostream>
+
