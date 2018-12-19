@@ -13,6 +13,7 @@ class Email
     string department;
     int mailboxCapacity;
     string alternateEmail;
+    string setDepartment();
 
 
 
