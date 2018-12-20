@@ -1,7 +1,11 @@
 #ifndef Email_H
 #define Email_H
+
+#include <algorithm>
 #include <string>
 #include <iostream>
+#include <cmath>
+#include <time.h>
 
 using namespace std;
 class Email
@@ -10,26 +14,26 @@ class Email
     string firstName;
     string lastName;
     string password;
+    string email;
     string department;
+    string companySuffix ="xyzcompany.com";
     int mailboxCapacity;
+    int length = 10;
     string alternateEmail;
-    string setDepartment();
-
-
-
+    string setDepartment(); // ask for the department
+    string tolower(string str); //changing to lower case
 
 
     public:
 
-    //constructor to receive the first name and the last name
-        Email(string firstName, string lastName);
+    Email(string firstName, string lastName);  //constructor to receive the first name and the last name
 
-        virtual ~Email();
-
-    // ask for the department
+    virtual ~Email(); //destructor
 
 
-    //generate the radndom password
+
+
+    string randomPassword(int);//generate the radndom password
 
     //  set mailbox capacity
 

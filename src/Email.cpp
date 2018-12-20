@@ -2,6 +2,9 @@
 
 #include "Email.h"
 
+//constructor to receive the first name and the last name
+
+
 Email::Email(string firstName, string lastName)
 {
     this->firstName=firstName;
@@ -9,6 +12,15 @@ Email::Email(string firstName, string lastName)
     std::cout << "Email was created: " << this->firstName << " " << this->lastName << endl;
 
     this->department = setDepartment();
+    cout << "your department: "<< this->department << endl;
+
+    this->password = randomPassword(length);
+     cout << "your password: "<< this->password << endl;
+
+     //email generate
+     email= tolower(firstName) + "." + tolower(lastName) + "@" + department + "." + companySuffix;//tolower(firstName);
+     cout << this->email;
+
 }
 
 Email::~Email()
@@ -16,21 +28,60 @@ Email::~Email()
     //dtor
 }
 
+ // ask for the department
+
 string Email::setDepartment()
 {
-    cout << "Select your department: \n1 Sales \n2 Development \n3 Accounting \n4 None" << endl;
+    cout << "DEPARTMENT CODE \n1 Sales \n2 Development \n3 Accounting \n4 None \n Select your department:" << endl;
     int depChoice;
     cin >> depChoice;
 
     switch(depChoice) {
     case 1 : return "sales";
-             break;       // and exits the switch
+
     case 2 : return "dev";
-             break;
-    case 3 : return "acct"; // prints "1"
-             break;       // and exits the switch
+
+    case 3 : return "acct";
+
     case 4 : return "";
-             break;
+
+    }
+
 }
 
+
+    //generate the radndom password
+
+string    Email::randomPassword(int length)
+    {
+        string setPassword = "ABCDEFGHIJKLMNOPQRSTUXYZ01234567891@#$%";
+        string pass="";
+
+
+        srand(time(NULL));
+        for (int i=0; i<length; i++)
+        {
+        int randNum = rand()%((setPassword.size() - 1 + 1) + 1);
+
+        pass+=setPassword[randNum];
+
+        }
+
+        return pass;
+
+    }
+
+
+
+    //  set mailbox capacity
+
+    //set alternate email
+
+    // change the pasword
+string Email::tolower(string str){
+
+
+std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+
+    return str;
 }
