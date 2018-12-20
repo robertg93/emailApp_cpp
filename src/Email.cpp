@@ -2,7 +2,7 @@
 
 #include "Email.h"
 
-//constructor to receive the first name and the last name
+//constructor to set first name,last name, password...
 
 
 Email::Email(string firstName, string lastName)
