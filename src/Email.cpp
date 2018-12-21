@@ -19,7 +19,7 @@ Email::Email(string firstName, string lastName)
 
      //email generate
      email= tolower(firstName) + "." + tolower(lastName) + "@" + department + "." + companySuffix;//tolower(firstName);
-     cout << this->email;
+     cout << "Your email is: "<<this->email;
 
 }
 
