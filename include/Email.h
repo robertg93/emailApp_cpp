@@ -24,9 +24,11 @@ class Email
     string tolower(string str); //changing to lower case
 
 
+
     public:
 
     Email(string firstName, string lastName);  //constructor to receive the first name and the last name
+    void setMailboxCapacity(int capacity);
 
     virtual ~Email(); //destructor
 

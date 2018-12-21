@@ -75,6 +75,11 @@ string    Email::randomPassword(int length)
 
     //  set mailbox capacity
 
+     void Email::setMailboxCapacity(int capacity)
+     {
+         this->mailboxCapacity=capacity;
+     }
+
     //set alternate email
 
     // change the pasword
