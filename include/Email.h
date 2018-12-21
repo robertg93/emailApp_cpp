@@ -30,7 +30,7 @@ class Email
     Email(string firstName, string lastName);  //constructor to receive the first name and the last name
     void setMailboxCapacity(int capacity);
     void setalternateEmail(int alterEmail);
-    void changePassword(int password);
+    void changePassword(string password);
 
     virtual ~Email(); //destructor
 

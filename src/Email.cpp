@@ -88,10 +88,10 @@ string    Email::randomPassword(int length)
 
     // change the pasword
 
-     //void Email::changePassword(int capacity)
-     //{
-       //  this->mailboxCapacity=capacity;
-    // }
+     void Email::changePassword(string password)
+     {
+         this->password=password;
+     }
 
 
 
