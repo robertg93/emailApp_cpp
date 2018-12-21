@@ -81,8 +81,20 @@ string    Email::randomPassword(int length)
      }
 
     //set alternate email
+     void Email::setalternateEmail(int alterEmail)
+     {
+         this->alternateEmail=alterEmail;
+     }
 
     // change the pasword
+
+     //void Email::changePassword(int capacity)
+     //{
+       //  this->mailboxCapacity=capacity;
+    // }
+
+
+
 string Email::tolower(string str){
 
 
