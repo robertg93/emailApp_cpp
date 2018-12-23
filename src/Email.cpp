@@ -94,6 +94,8 @@ string    Email::randomPassword(int length)
      }
 
      int Email::getMailboxCapacity(){ return mailboxCapacity; }
+     string Email::getAlternateEmail() {return alternateEmail; }
+     string Email::getPassword(){ return this->password; }
 
 
 
