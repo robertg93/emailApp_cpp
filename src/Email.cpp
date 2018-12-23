@@ -93,6 +93,8 @@ string    Email::randomPassword(int length)
          this->password=password;
      }
 
+     int Email::getMailboxCapacity(){ return mailboxCapacity; }
+
 
 
 string Email::tolower(string str){
