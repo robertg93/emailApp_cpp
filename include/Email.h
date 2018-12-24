@@ -17,7 +17,7 @@ class Email
     string email;
     string department;
     string companySuffix ="xyzcompany.com";
-    int mailboxCapacity;
+    int mailboxCapacity=500;
     int length = 10;
     string alternateEmail;
     string setDepartment(); // ask for the department
@@ -34,6 +34,7 @@ class Email
     int getMailboxCapacity();
     string getAlternateEmail();
     string getPassword();
+    void showInfo();
 
     virtual ~Email(); //destructor
 

@@ -9,17 +9,17 @@ Email::Email(string firstName, string lastName)
 {
     this->firstName=firstName;
     this->lastName=lastName;
-    std::cout << "Email was created: " << this->firstName << " " << this->lastName << endl;
+    //std::cout << "Email was created: " << this->firstName << " " << this->lastName << endl;
 
     this->department = setDepartment();
-    cout << "your department: "<< this->department << endl;
+    //cout << "your department: "<< this->department << endl;
 
     this->password = randomPassword(length);
-     cout << "your password: "<< this->password << endl;
+    //cout << "your password: "<< this->password << endl;
 
      //email generate
      email= tolower(firstName) + "." + tolower(lastName) + "@" + department + "." + companySuffix;//tolower(firstName);
-     cout << "Your email is: "<<this->email;
+     //cout << "Your email is: "<<this->email;
 
 }
 
@@ -97,7 +97,13 @@ string    Email::randomPassword(int length)
      string Email::getAlternateEmail() {return alternateEmail; }
      string Email::getPassword(){ return this->password; }
 
+    void Email::showInfo()
+    {
+        cout << "NAME:             "<< firstName << " " << lastName << endl;
+        cout << "COMPANY EMAIL:    "<< email << endl;
+        cout << "MAILBOXCAPACITY:  "<< mailboxCapacity <<"mb" << endl;
 
+    }
 
 string Email::tolower(string str){
 
