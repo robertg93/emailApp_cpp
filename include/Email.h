@@ -29,7 +29,7 @@ class Email
 
     Email(string firstName, string lastName);  //constructor to receive the first name and the last name
     void setMailboxCapacity(int capacity);
-    void setalternateEmail(int alterEmail);
+    void setalternateEmail(string alterEmail);
     void changePassword(string password);
     int getMailboxCapacity();
     string getAlternateEmail();

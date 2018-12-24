@@ -81,7 +81,7 @@ string    Email::randomPassword(int length)
      }
 
     //set alternate email
-     void Email::setalternateEmail(int alterEmail)
+     void Email::setalternateEmail(string alterEmail)
      {
          this->alternateEmail=alterEmail;
      }
