@@ -8,7 +8,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <vector>
-
+#include <fstream>
 
 
 using namespace std;
@@ -31,16 +31,21 @@ class Email
 
     public:
 
-    Email();  //constructor to receive the first name and the last name
+    Email();
+    Email(string name);  //constructor to receive the first name and the last name
     void setMailboxCapacity(int capacity);
     void setalternateEmail(string alterEmail);
     void changePassword(string password);
     int getMailboxCapacity();
+    int getNumberOfObjects();
     string getFirstName();
     string getLastName();
     string getAlternateEmail();
     string getPassword();
+    static int numberOfObjects;
     void showInfo();
+    friend  istream& operator>>(istream& is, Email& en);
+    friend ostream& operator<<(ostream& os, const Email& en);
 
 
     virtual ~Email(); //destructor
@@ -65,6 +70,10 @@ class Email
 
 
 };
+
+istream& operator>>(istream& is, Email& en);
+ostream& operator<<(ostream& os, const Email& en);
+
 
 #endif // Email_H
 

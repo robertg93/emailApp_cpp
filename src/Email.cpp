@@ -1,11 +1,16 @@
 
 #include "Email.h"
-
+int Email::numberOfObjects=0;
 Email::Email()
 {
-    cout << "\033[2J\033[1;1H";
-    cout << "Enter first name" << endl;
-    cin >>firstName;
+    this->numberOfObjects++;
+}
+
+Email::Email(string name )
+{
+    this->numberOfObjects++;
+    //cout << "\033[2J\033[1;1H";
+    firstName=name;
     cout << "Enter last name" << endl;
     cin>>lastName;
     //std::cout << "Email was created: " << this->firstName << " " << this->lastName << endl;
@@ -130,6 +135,10 @@ string Email::getLastName()
 {
     return lastName;
 }
+int Email::getNumberOfObjects()
+{
+    return numberOfObjects;
+}
 
 void Email::showInfo()
 {
@@ -144,4 +153,18 @@ string Email::tolower(string str)
 {
     std::transform(str.begin(), str.end(), str.begin(), ::tolower);
     return str;
+}
+
+
+istream& operator>>(istream& is, Email& en)
+{
+    is >> en.firstName;
+    is >> en.lastName;
+    return is;
+}
+
+ostream& operator<<(ostream& os, const Email& en)
+{
+    os << en.firstName << " " << en.lastName << endl;
+    return os;
 }
