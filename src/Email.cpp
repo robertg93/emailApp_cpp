@@ -2,13 +2,13 @@
 
 #include "Email.h"
 
-//constructor to set first name,last name, password...
-
-
-Email::Email(string firstName, string lastName)
+Email::Email()
 {
-    this->firstName=firstName;
-    this->lastName=lastName;
+    cout << "\033[2J\033[1;1H";
+    cout << "Enter first name" << endl;
+    cin >>firstName;
+    cout << "Enter last name" << endl;
+    cin>>lastName;
     //std::cout << "Email was created: " << this->firstName << " " << this->lastName << endl;
 
     this->department = setDepartment();
@@ -16,10 +16,19 @@ Email::Email(string firstName, string lastName)
 
     this->password = randomPassword(length);
     //cout << "your password: "<< this->password << endl;
+    setMailboxCapacity(mailboxCapacity);
 
      //email generate
      email= tolower(firstName) + "." + tolower(lastName) + "@" + department + "." + companySuffix;//tolower(firstName);
      //cout << "Your email is: "<<this->email;
+     cout << "\033[2J\033[1;1H";
+    cout << "User was created!" << endl << flush;
+
+    showInfo();
+    cout<<endl;
+    cin.ignore();
+    cin.get();
+
 
 }
 
@@ -32,7 +41,7 @@ Email::~Email()
 
 string Email::setDepartment()
 {
-    cout << "DEPARTMENT CODE \n1 Sales \n2 Development \n3 Accounting \n4 None \n Select your department:" << endl;
+    cout << " ENTER DEPARTMENT CODE \n1 Sales \n2 Development \n3 Accounting \n4 None \n Select your department:" << endl;
     int depChoice;
     cin >> depChoice;
 
@@ -102,6 +111,7 @@ string    Email::randomPassword(int length)
         cout << "NAME:             "<< firstName << " " << lastName << endl;
         cout << "COMPANY EMAIL:    "<< email << endl;
         cout << "MAILBOXCAPACITY:  "<< mailboxCapacity <<"mb" << endl;
+        cout << "PASSWORD          "<< password << endl;
 
     }
 

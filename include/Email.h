@@ -6,6 +6,10 @@
 #include <iostream>
 #include <cmath>
 #include <time.h>
+#include <stdlib.h>
+#include <vector>
+
+
 
 using namespace std;
 class Email
@@ -27,7 +31,7 @@ class Email
 
     public:
 
-    Email(string firstName, string lastName);  //constructor to receive the first name and the last name
+    Email();  //constructor to receive the first name and the last name
     void setMailboxCapacity(int capacity);
     void setalternateEmail(string alterEmail);
     void changePassword(string password);
