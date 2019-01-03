@@ -1,5 +1,4 @@
 
-
 #include "Email.h"
 
 Email::Email()
@@ -18,10 +17,10 @@ Email::Email()
     //cout << "your password: "<< this->password << endl;
     setMailboxCapacity(mailboxCapacity);
 
-     //email generate
-     email= tolower(firstName) + "." + tolower(lastName) + "@" + department + "." + companySuffix;//tolower(firstName);
-     //cout << "Your email is: "<<this->email;
-     cout << "\033[2J\033[1;1H";
+    //email generate
+    email= tolower(firstName) + "." + tolower(lastName) + "@" + department + "." + companySuffix;//tolower(firstName);
+    //cout << "Your email is: "<<this->email;
+    cout << "\033[2J\033[1;1H";
     cout << "User was created!" << endl << flush;
 
     showInfo();
@@ -37,7 +36,7 @@ Email::~Email()
     //dtor
 }
 
- // ask for the department
+// ask for the department
 
 string Email::setDepartment()
 {
@@ -45,80 +44,104 @@ string Email::setDepartment()
     int depChoice;
     cin >> depChoice;
 
-    switch(depChoice) {
-    case 1 : return "sales";
+    switch(depChoice)
+    {
+    case 1 :
+        return "sales";
 
-    case 2 : return "dev";
+    case 2 :
+        return "dev";
 
-    case 3 : return "acct";
+    case 3 :
+        return "acct";
 
-    case 4 : return "";
+    case 4 :
+        return "";
 
     }
 
 }
 
 
-    //generate the radndom password
+//generate the radndom password
 
 string    Email::randomPassword(int length)
+{
+    string setPassword = "ABCDEFGHIJKLMNOPQRSTUXYZ01234567891@#$%";
+    string pass="";
+
+
+    srand(time(NULL));
+    for (int i=0; i<length; i++)
     {
-        string setPassword = "ABCDEFGHIJKLMNOPQRSTUXYZ01234567891@#$%";
-        string pass="";
-
-
-        srand(time(NULL));
-        for (int i=0; i<length; i++)
-        {
         int randNum = rand()%((setPassword.size() - 1 + 1) + 1);
 
         pass+=setPassword[randNum];
 
-        }
-
-        return pass;
-
     }
 
+    return pass;
+
+}
 
 
-    //  set mailbox capacity
 
-     void Email::setMailboxCapacity(int capacity)
-     {
-         this->mailboxCapacity=capacity;
-     }
+//  set mailbox capacity
 
-    //set alternate email
-     void Email::setalternateEmail(string alterEmail)
-     {
-         this->alternateEmail=alterEmail;
-     }
+void Email::setMailboxCapacity(int capacity)
+{
+    this->mailboxCapacity=capacity;
+}
 
-    // change the pasword
+//set alternate email
+void Email::setalternateEmail(string alterEmail)
+{
+    this->alternateEmail=alterEmail;
+}
 
-     void Email::changePassword(string password)
-     {
-         this->password=password;
-     }
+// change the pasword
 
-     int Email::getMailboxCapacity(){ return mailboxCapacity; }
-     string Email::getAlternateEmail() {return alternateEmail; }
-     string Email::getPassword(){ return this->password; }
+void Email::changePassword(string password)
+{
+    this->password=password;
+}
 
-    void Email::showInfo()
-    {
-        cout << "NAME:             "<< firstName << " " << lastName << endl;
-        cout << "COMPANY EMAIL:    "<< email << endl;
-        cout << "MAILBOXCAPACITY:  "<< mailboxCapacity <<"mb" << endl;
-        cout << "PASSWORD          "<< password << endl;
+int Email::getMailboxCapacity()
+{
+    return mailboxCapacity;
+}
 
-    }
+string Email::getAlternateEmail()
+{
+    return alternateEmail;
+}
 
-string Email::tolower(string str){
+string Email::getPassword()
+{
+    return this->password;
+}
 
+string Email::getFirstName()
+{
+    return firstName;
+}
 
-std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+string Email::getLastName()
+{
+    return lastName;
+}
 
+void Email::showInfo()
+{
+    cout << "NAME:             "<< firstName << " " << lastName << endl;
+    cout << "COMPANY EMAIL:    "<< email << endl;
+    cout << "MAILBOXCAPACITY:  "<< mailboxCapacity <<"mb" << endl;
+    cout << "PASSWORD          "<< password << endl;
+
+}
+
+string Email::tolower(string str)
+{
+    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
     return str;
 }

@@ -36,9 +36,12 @@ class Email
     void setalternateEmail(string alterEmail);
     void changePassword(string password);
     int getMailboxCapacity();
+    string getFirstName();
+    string getLastName();
     string getAlternateEmail();
     string getPassword();
     void showInfo();
+
 
     virtual ~Email(); //destructor
 

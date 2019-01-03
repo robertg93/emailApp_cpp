@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1546511826 source:/home/robert/c++/EmailApp/main.cpp
+1546514542 source:/home/robert/c++/EmailApp/main.cpp
 	<iostream>
 	"Email.h"
 
@@ -10,10 +10,10 @@
 1545242644 source:/home/robert/c++/EmailApp/src/Eamil.cpp
 	"Eamil.h"
 
-1546511945 source:/home/robert/c++/EmailApp/src/Email.cpp
+1546513311 source:/home/robert/c++/EmailApp/src/Email.cpp
 	"Email.h"
 
-1546512288 /home/robert/c++/EmailApp/include/Email.h
+1546513010 /home/robert/c++/EmailApp/include/Email.h
 	<algorithm>
 	<string>
 	<iostream>
