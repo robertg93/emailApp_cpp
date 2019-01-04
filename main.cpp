@@ -1,14 +1,17 @@
 #include <iostream>
 #include "Email.h"
+
 void showUsers();
 vector<Email> vec;
-
+void loadNumberOfObjects();
+void saveNumberOfobjects();
 
 int main()
 {
 
     int option;
 
+    loadNumberOfObjects();
     do
         {
         //cout << "\033[2J\033[1;1H";
@@ -26,9 +29,9 @@ int main()
                     ofstream out("savedUsers", fstream::app);
                     out << em1;
                     out.close();
-                    ofstream outNum;
-                    outNum.open ("numberOfObject.txt");
-                    outNum << em1.getNumberOfObjects();
+                    saveNumberOfobjects();
+
+
 
                 }
 
@@ -47,11 +50,11 @@ int main()
 void showUsers()
 {
      //cout << "\033[2J\033[1;1H";   //clear screen
-    for ( int i = 0; i<vec.size() ; i++)
+    for ( int i = 0; i<100 ; i++)
     {
         ifstream in("savedUsers");
         //cout << "fadsfasdf";
-        Email e1;
+        Email e1; //// NIE DZIALA UZYC KONSTRUKTORA KOPIUJAcego
         in >> e1;
         in.close();
         //cout << 345 << endl;
@@ -65,3 +68,18 @@ void showUsers()
     cin.get();
 }
 
+void loadNumberOfObjects()
+{
+                    int tempnum;
+                    ifstream inNum;
+                    inNum.open ("numberOfObject.txt");
+                    inNum >> tempnum;
+                    Email::setNumberOfObjects(tempnum);
+}
+
+void saveNumberOfobjects()
+{
+                    ofstream outNum;
+                    outNum.open ("numberOfObject.txt");
+                    outNum << Email::getNumberOfObjects();
+}

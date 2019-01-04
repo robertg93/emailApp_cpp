@@ -104,6 +104,11 @@ void Email::setalternateEmail(string alterEmail)
     this->alternateEmail=alterEmail;
 }
 
+void Email::setNumberOfObjects(int x)
+{
+    numberOfObjects=x;
+}
+
 // change the pasword
 
 void Email::changePassword(string password)

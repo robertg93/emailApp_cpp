@@ -35,9 +35,10 @@ class Email
     Email(string name);  //constructor to receive the first name and the last name
     void setMailboxCapacity(int capacity);
     void setalternateEmail(string alterEmail);
+    void static setNumberOfObjects(int x);
     void changePassword(string password);
     int getMailboxCapacity();
-    int getNumberOfObjects();
+    int static getNumberOfObjects();
     string getFirstName();
     string getLastName();
     string getAlternateEmail();
