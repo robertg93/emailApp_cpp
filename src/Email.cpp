@@ -1,10 +1,7 @@
 
 #include "Email.h"
 int Email::numberOfObjects=0;
-Email::Email()
-{
-    this->numberOfObjects++;
-}
+Email::Email(){}
 
 Email::Email(string name )
 {
@@ -143,6 +140,15 @@ string Email::getLastName()
 int Email::getNumberOfObjects()
 {
     return numberOfObjects;
+}
+string Email::getDepartment()
+{
+    return department;
+}
+
+string Email::getEmail()
+{
+    return email;
 }
 
 void Email::showInfo()

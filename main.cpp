@@ -5,39 +5,30 @@ void showUsers();
 vector<Email> vec;
 void loadNumberOfObjects();
 void saveNumberOfobjects();
+void loadUserToVec();
+void createNewUser();
 
 int main()
 {
 
     int option;
-
     loadNumberOfObjects();
+    loadUserToVec();
+
     do
         {
-        //cout << "\033[2J\033[1;1H";
+        cout << "\033[2J\033[1;1H";
         cout << "Enter the number to selcet ption: \n 1 Create new user \n 2 show users \n 0 Exit " << endl;
 
         cin >> option;
 
             if (option == 1)
                 {
-                    string temp;
-                    cout << "Enter Your name:" << endl;
-                    cin>>temp;
-                    Email em1(temp);
-                    vec.push_back(em1);
-                    ofstream out("savedUsers", fstream::app);
-                    out << em1;
-                    out.close();
-                    saveNumberOfobjects();
-
-
-
+                    createNewUser();
                 }
 
             if (option == 2)
                 {
-                    //cout << "cos tam";
                     showUsers();
                 }
         }
@@ -49,20 +40,11 @@ int main()
 
 void showUsers()
 {
-     //cout << "\033[2J\033[1;1H";   //clear screen
-    for ( int i = 0; i<100 ; i++)
+    for ( int i = 0; i<vec.size() ; i++)
     {
-        ifstream in("savedUsers");
-        //cout << "fadsfasdf";
-        Email e1; //// NIE DZIALA UZYC KONSTRUKTORA KOPIUJAcego
-        in >> e1;
-        in.close();
-        //cout << 345 << endl;
-        cout << e1.getFirstName();
-        //cout << 123 <<endl;
-        //cout << vec[i].getFirstName() << " " << vec[i].getLastName();
-        //cout<<endl;
 
+        cout << vec[i].getFirstName() << " " << vec[i].getLastName() <<  endl;
+        // vec[i].showInfo();
     }
     cin.ignore();
     cin.get();
@@ -82,4 +64,35 @@ void saveNumberOfobjects()
                     ofstream outNum;
                     outNum.open ("numberOfObject.txt");
                     outNum << Email::getNumberOfObjects();
+}
+
+
+void loadUserToVec()
+{
+    ifstream in("savedUsers");
+    int temp = Email::getNumberOfObjects();
+    for ( int i = 0; i<temp ; i++)
+    {
+        Email e1;
+        in >> e1;
+        vec.push_back(e1);
+    }
+
+    in.close();
+
+
+}
+
+void createNewUser()
+{
+    string temp;
+                    cout << "Enter Your name:" << endl;
+                    cin>>temp;
+                    Email em1(temp);
+                    vec.push_back(em1);
+                    ///////////////////////
+                    ofstream out("savedUsers", fstream::app);
+                    out << em1;
+                    out.close();
+                    saveNumberOfobjects();
 }

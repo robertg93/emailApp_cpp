@@ -43,6 +43,8 @@ class Email
     string getLastName();
     string getAlternateEmail();
     string getPassword();
+    string getDepartment();
+    string getEmail();
     static int numberOfObjects;
     void showInfo();
     friend  istream& operator>>(istream& is, Email& en);
